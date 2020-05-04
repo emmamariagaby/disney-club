@@ -3,11 +3,11 @@ const mongodb = require('mongodb')
 
 async function connect() {
     const client = mongodb.MongoClient
-    const url = "mongodb://localhost:27017/disney-users"
+    const url = "mongodb://localhost:27017/disney"
     const options = { useUnifiedTopology: true }
     const connection = await client.connect(url, options)
     console.log('Connection to database has been established')
-    const db = connection.db('disney-users')
+    const db = connection.db('disney')
     console.log('Database has been created')
     return db
 }
