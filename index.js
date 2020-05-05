@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 
 let app = express();
 app.use(express.json());
-
 // Routes
 
 // Koppling till databas
