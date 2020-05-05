@@ -30,10 +30,20 @@ async function createCollections(db) {
 async function insertUser(collection) {
     const res = await collection.insertOne({
         name: 'Ellen',
+        age: 7,
         password: 's3cr3t'
     })
     console.log('A user was created')
 } 
+
+/**
+ * 
+ * @param {mongodb.Collection} collection 
+ */
+async function updateUser(collection) {
+    const res = await collection.updateOne({ name: 'Ellen' }, { $set: { "age" : 8 } })
+    console.log('A user was updated')
+}
 
 /**
  * 
@@ -54,12 +64,12 @@ async function findUsers(collection) {
     return users;
 }
 
-
 async function run() {
     try {
         const db = await connect()
         const collections = await createCollections(db)
         insertUser(collections[0])
+        updateUser(collections[0])
         deleteUsers(collections[0])
         const users = findUsers(collections[0])
 
