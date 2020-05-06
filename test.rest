@@ -3,11 +3,3 @@ GET http://localhost:3000
 ###
 
 POST http://localhost:3000/characters
-
-
-    info: {
-      "name": "Simba",
-      "movie": "LionKing",
-      "bestFrient": "Nala",
-    }
-    
