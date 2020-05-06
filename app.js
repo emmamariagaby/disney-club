@@ -1,13 +1,18 @@
 const express = require('express')
-
+const characters = require('./routes/characters')
+const users = require('./routes/users')
 const app = express()
 
 app.use(express.json())
+app.use(express.static('public'))
 
 app.use((req, res, next) => {
     res.setHeader('Content-Type', 'application/json')
     next()
 })
+
+app.get('/', (req, res) => res.send('Welcome to Disney-Club'))
+
 
 
 
