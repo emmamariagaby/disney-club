@@ -1,0 +1,40 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: pink;
+  padding: 0.5rem;
+  width: 40rem;
+  margin: 1rem;
+}
+
+nav {
+  background: rgb(208, 208, 255);
+  height: 3rem;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
