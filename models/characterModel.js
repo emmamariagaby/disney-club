@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 let CharacterSchema = {
+
   title: {
     type: String,
   },
@@ -20,5 +21,6 @@ let CharacterSchema = {
     contentType: String,
   },
 }
+
 
 module.exports = mongoose.model('Character', CharacterSchema)
