@@ -1,25 +1,27 @@
-GET http://localhost:3000/users
+GET http://localhost:3000/characters
 
 ###
 
 
-POST http://localhost:3000/users
+POST http://localhost:3000/characters
 Content-Type: application/json
 
 {
- "name": "emmbla",
- "password": "kaffe"
+ "name": "Jasmine",
+ "movie": "Aladdin",
+ "bestFriend": "Alladdin"
 }
 
 ###
 
-PUT http://localhost:3000/users/5eb40fd37e36943a8862d465
+PUT http://localhost:3000/characters/5eb4585367037d3380f4297e
 Content-Type: application/json
 
 {
- "name": "trezzan",
- "password": "kaffe"
+ "name": "Jasmine",
+ "movie": "Aladdin",
+ "bestFriend": "Aladdin"
 }
 
 ###
-DELETE http://localhost:3000/users/5eb40fd37e36943a8862d465
+DELETE http://localhost:3000/characters/5eb4585367037d3380f4297e
