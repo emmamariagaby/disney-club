@@ -3,6 +3,7 @@ const express = require('express')
 const characters = require('./routes/characters')
 const users = require('./routes/users')
 const app = express()
+const chalk = require("chalk");
 
 app.use(express.json())
 app.use(express.static('public'))
@@ -18,4 +19,5 @@ app.use(characters)
 app.use(users)
 
 
-app.listen(3000, () => console.log('Server is up and running!'))
+app.listen(3000, () => console.log(chalk.blue("Server is running at: http://localhost:3000"))
+);
