@@ -11,20 +11,23 @@
       min-width: 100% auto;
       min-height: 100% auto;
       padding: 30px 30px 20px;
+      border: #5D26C1;
+      border-width: 10px;
+      border-style: outset;
       background-image: linear-gradient(#59c173, #a17fe0, #5D26C1);
   }
 
   .img-banner {
-     width: 50%;
-     height: 50%;
+     width: 60%;
+     height: 60%;
      padding: 10px 0px 30px 0px;
   }
 
   .img-content {
       width: 100%;
       height: auto;
-      border: 10px;
-      border-style: groove;
+      border: 5px;
+      border-style: outset;
       border-color: lightblue;
    
       }
@@ -33,7 +36,7 @@
       text-align: center;
       padding: 0px 40px 30px;
       font-size: 15px;
-      color: black;
+      color: darkblue;
       line-height: 30px;
   }
 
@@ -41,7 +44,7 @@
     text-align: center;
     padding: 30px 20px 20px;
     font-size: 20px;
-    color: black;
+    color: darkblue;
     line-height: 44px;
    
 }
