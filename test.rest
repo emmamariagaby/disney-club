@@ -1,28 +1,25 @@
-GET http://localhost:3000/characters
+GET http://localhost:3000/users
 
 ###
 
 
-POST http://localhost:3000/characters
+POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "name": "Simba",
-    "movie": "The Lion King",
-    "bestFriend": "Nala"
+ "name": "emmbla",
+ "password": "kaffe"
 }
 
 ###
 
-PUT http://localhost:3000/characters/5eb3e4553a0fcc8d00be45ac
+PUT http://localhost:3000/users/5eb40fd37e36943a8862d465
 Content-Type: application/json
 
 {
-    "name": "Anna", 
-    "movie": "Frost", 
-    "bestFriend": "Elsa"
+ "name": "trezzan",
+ "password": "kaffe"
 }
 
 ###
-
-DELETE http://localhost:3000/characters/5eb3e5d7457e327e5ce5282a
+DELETE http://localhost:3000/users/5eb40fd37e36943a8862d465

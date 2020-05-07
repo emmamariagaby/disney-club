@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => res.send('Welcome to Disney-Club'))
 
 app.use(characters)
-//app.use('/users', users)
+app.use(users)
 
 
 app.listen(3000, () => console.log('Server is up and running!'))
