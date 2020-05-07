@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-let CharacterSchema = {
+let CharacterSchema = new mongoose.Schema({
   title: {
     type: String,
   },
@@ -19,6 +19,7 @@ let CharacterSchema = {
     data: Buffer,
     contentType: String,
   },
-}
+})
 
-module.exports = mongoose.model('Character', CharacterSchema)
+const Character = mongoose.model('Character', CharacterSchema)
+module.exports = Character

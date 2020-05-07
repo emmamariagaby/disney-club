@@ -1,15 +1,26 @@
 const express = require('express')
 const characterModel = require('../models/characterModel')
+const router = express()
 
-const router = express.Router()
+router.get('/characters', async (req, res) => {
+  const characters = await characterModel.find({})
 
-router.post('/', async (req, res, next) => {
-    const character = req.body
-    const characterDoc = await new characterModel(character)
-    const savedDocument = await characterDoc.save()
-    res.send(JSON.stringify(savedDocument))
+  try {
+    res.send(characters)
+  } catch (err) {
+    res.status(500).send(err)
+  }
 })
 
-router.get('/', (req, res, next) => {
-    const characterId = req.query.id
+router.post('/characters', async (req, res) => {
+  const character = new characterModel(req.body)
+
+  try {
+    await character.save()
+    res.send(character)
+  } catch (err) {
+    res.status(500).send(err)
+  }
 })
+
+module.exports = router
