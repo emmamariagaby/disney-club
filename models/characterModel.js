@@ -1,24 +1,10 @@
 const mongoose = require('mongoose')
 
-let CharacterSchema = {
-  title: {
-    type: String,
-  },
-  info: {
+let CharacterSchema = new mongoose.Schema({
     name: String,
     movie: String,
-    bestFrient: String,
-  },
-  description: {
-    type: String,
-  },
-  createdAt: {
-    type: Date,
-  },
-  img: {
-    data: Buffer,
-    contentType: String,
-  },
-}
+    bestFriend: String
+})
 
-module.exports = mongoose.model('Character', CharacterSchema)
+const Character = mongoose.model('Character', CharacterSchema)
+module.exports = Character
