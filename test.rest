@@ -1,6 +1,7 @@
-GET http://localhost:3000/
+GET http://localhost:3000/characters
 
 ###
+
 
 POST http://localhost:3000/characters
 Content-Type: application/json
@@ -10,3 +11,18 @@ Content-Type: application/json
     "movie": "The Lion King",
     "bestFriend": "Nala"
 }
+
+###
+
+PUT http://localhost:3000/characters/5eb3e4553a0fcc8d00be45ac
+Content-Type: application/json
+
+{
+    "name": "Anna", 
+    "movie": "Frost", 
+    "bestFriend": "Elsa"
+}
+
+###
+
+DELETE http://localhost:3000/characters/5eb3e5d7457e327e5ce5282a
