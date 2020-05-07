@@ -27,9 +27,8 @@ router.get('/users', async (req, res) => {
 })
 
 router.put('/users/:id', async (req, res) => {
-    const user = await userModel.find({})
-
     try {
+        const user = await userModel.findByIdAndUpdate(req.params.id)
         await userModel.findByIdAndUpdate(req.params.id, req.body)
         await userModel.save()
         res.send(user)
