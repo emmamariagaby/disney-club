@@ -10,14 +10,29 @@
 <body>
    <div class="wrapper">
       <img class="img-disneybanner" src="assets/images/waltdisney.png" alt="image">
-      <div class="wrapper-content-bigger">
+      <div class="wrapper-content-bigger"></div>
       <div class="wrapper-content-smaller">
       </div>
-        <article class="text-info">
-   <h2>Disney-Club</h2>
-   <p>text info text info text info text info text info text info text info text info
-   text info text info text info text info text info text info text info text info text info text info</p>
-   </article>
+      <article class="text-info">
+         <h2>Disney-Club</h2>
+         <p>text info text info text info text info text info text info text info text info
+         text info text info text info text info text info text info text info text info text info text info</p>
+      </article>
+      <h3>All Character</h3>
+      <div id="getAllCharacters"></div>
+      <h3>Create A New Character</h3>
+      <div class="createNew">
+          <form id="create" method='POST'>
+              <label>Create A New Character</label>
+              <input id="name" name="name" type="text" placeholder="Name">
+              <input id="movie" name="movie" type="text" placeholder="Movie">
+              <input id="bestFriend" name="bestFriend" type="text" placeholder="Best Friend">
+              <button type="submit">Add Disney Character</button>
+              <div id="message"></div>
+              <div id="message"></div>
+          </form>
+      </div>
+      <div class="createCharacter"></div>
    </div>
 </body>
 </html>
