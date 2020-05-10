@@ -60,3 +60,8 @@ let createContainer = document.getElementById("message")
     setTimeout(function () { 
         window.location.reload() }, 1500)
 }
+
+//form, login and create
+$('.message a').click(function(){
+    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
