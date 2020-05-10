@@ -17,8 +17,8 @@
   background-image: linear-gradient(#59c173, #a17fe0, #5d26c1);
 }
 
-.wrapper-content-bigger {
-  width: 80%;
+.wrapper-content-bigger, form {
+  width: 100%;
   min-height: 100%;
   border-width: 100%;
   border: 5px;
@@ -28,16 +28,78 @@
   color: #a17fe0;
 }
 
-.wrapper-content-smaller {
-  position: relative;
+.wrapper-content-smaller form {
   top: 20px;
   border: 5px;
   border-style: solid;
-  width: 70%;
-  height: 250px;
+  width: 90%;
+  height: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  background: #5d26c1;
+}
+
+.login {
+    width: 350px;
+    padding: 10% 0 0 0;
+    margin: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form input {
+outline: 1;
+background: white;
+width: 100%;
+border: 0;
+margin: 0 0 15px;
+padding: 15px;
+box-sizing: border-box;
+display: block;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+.form button {
+    outline: 0;
+    background: #59c173;
+    width: 50%;
+    height: 50px;
+    border-radius: 25%;
+    margin-bottom: 40px;
+    border: 0;
+}
+
+.form button:hover, .form button:active {
+    background: lightblue;
+}
+
+.form .message {
+    margin: 15px 0 0;
+}
+
+.form .message a {
+    color: lightblue;
+    text-decoration: none;
+    font-size: small;
+}
+
+.form .register-form {
+    display: none;
 }
 
 .img-disneybanner {
