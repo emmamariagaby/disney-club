@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,32 +9,34 @@
     <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
     <title>Disney-Club</title>
 </head>
+
 <body>
     <div class="wrapper">
         <img class="img-disneybanner" src="assets/images/waltdisney.png" alt="image">
         <div class="wrapper-content-bigger">
             <div class="wrapper-content-smaller">
-            <!-- Registraton form -->
+                <!-- Registraton form -->
                 <div class="form">
                     <form class="register-form">
-                        <input type="text" placeholder="user name"/>
-                        <input type="text" placeholder="password"/>
-                        <input type="text" placeholder="email"/>
+                        <input type="text" placeholder="user name" />
+                        <input type="text" placeholder="password" />
+                        <input type="text" placeholder="email" />
                         <button>Create</button>
                         <p class="message">Already Registered? <a href="#">Login</a></p>
                     </form>
                     <!-- Login form -->
                     <form class="login-form">
-                        <input type="text" placeholder="user name"/>
-                        <input type="password" placeholder="password"/>
+                        <input type="text" placeholder="user name" />
+                        <input type="password" placeholder="password" />
                         <button>Login</button>
                         <p class="message">Not Registered? <a href="#">Register</a></p>
                     </form>
                 </div>
                 <article class="text-info">
-                <h2>Disney-Club</h2>
-                <p>text info text info text info text info text info text info text info text info
-                text info text info text info text info text info text info text info text info text info text info</p>
+                    <h2>Disney-Club</h2>
+                    <p>text info text info text info text info text info text info text info text info
+                        text info text info text info text info text info text info text info text info text info text
+                        info</p>
                 </article>
             </div>
         </div>
@@ -61,5 +64,14 @@
             <div id="updateMessage"></div>
         </form>
     </div>
+    <h3>Delete A Character</h3>
+    <div class="delete-character">
+        <form id="deleteCharacter" method='DELETE'>
+            <input id="deleteId" name="id" type="text" placeholder="Id">
+            <button type="submit">Delete Disney Character</button>
+            <div id="deleteMessage"></div>
+        </form>
+    </div>
 </body>
+
 </html>
