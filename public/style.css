@@ -17,6 +17,43 @@
   background-image: linear-gradient(#59c173, #a17fe0, #5d26c1);
 }
 
+header {
+  overflow: hidden;
+  background-color: #59c173;
+  position: sticky;
+  top: 0;
+  display: flex;
+  z-index: 1;
+  padding: 2rem;
+  background-image: linear-gradient(#59c173, #a17fe0, #5d26c1);
+  border-width: 10px;
+  border: #5d26c1;
+  border-style: outset;
+}
+
+a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+a:hover {
+  background-color: lightblue;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+a.active1, a.active2, a.active3, a.active4 {
+  background-color: #5d26c1;
+  color: white; 
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+
 .wrapper-content-bigger, form {
   width: 100%;
   min-height: 100%;
@@ -41,47 +78,45 @@
 }
 
 .login {
-    width: 350px;
-    padding: 10% 0 0 0;
-    margin: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  width: 350px;
+  padding: 10% 0 0 0;
+  margin: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form {
-    position: relative;
-    z-index: 1;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form input {
-outline: 1;
-background: white;
-width: 100%;
-border: 0;
-margin: 0 0 15px;
-padding: 15px;
-box-sizing: border-box;
-display: block;
-margin-left: auto;
-margin-right: auto;
-
+  outline: 1;
+  background: white;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form button {
-    outline: 0;
-    background: #59c173;
-    width: 50%;
-    height: 50px;
-    border-radius: 25%;
-    margin-bottom: 40px;
-    border: 0;
+  outline: 0;
+  background: #59c173;
+  width: 50%;
+  height: 50px;
+  border-radius: 25%;
+  margin-bottom: 40px;
+  border: 0;
 }
 
 .form button:hover, .form button:active {
@@ -126,6 +161,36 @@ margin-right: auto;
   font-size: 20px;
   color: darkblue;
   line-height: 44px;
+}
+
+
+
+.allCharacters {
+  display: flex;
+  flex-direction: column;
+  color: darkblue;
+}
+
+h3 {
+   text-align: center; 
+}
+
+#getAllCharacters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 3rem;
+}
+
+.all {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 1rem;
+  background-image: linear-gradient(#59c173, #a17fe0, #5d26c1);
+  background-color: #59c173;
+  padding: 1rem;
+  border-radius: 0.2rem;
 }
 
 @media only screen and (min-width: 768px) {
