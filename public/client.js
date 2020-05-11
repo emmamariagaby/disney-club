@@ -61,6 +61,41 @@ let createContainer = document.getElementById("message")
         window.location.reload() }, 1500)
 }
 
+
+const formUpdate = document.getElementById('updateCharacter')
+formUpdate.addEventListener('submit', update)
+
+function update(event) {
+    event.stopPropagation()
+    event.preventDefault()
+
+    const formData = new FormData(event.target)
+    const updatedCharacter = {}
+    for (const pair of formData.entries()) {
+        const [key, value] = pair
+        updatedCharacter[key] = value
+    }
+    const id = document.getElementById("updateId").value 
+    const name = document.getElementById("updateName").value 
+    fetch("/characters/" + id, {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(updatedCharacter)
+})
+
+let createContainer = document.getElementById("updateMessage")
+   
+let updateMessage = document.createElement("h4")
+message.innerText = name + " har uppdaterats"
+createContainer.appendChild(updateMessage) 
+
+setTimeout(function () { 
+    window.location.reload() }, 1500)
+
+}
+
 //form, login and create
 $('.message a').click(function(){
     $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
