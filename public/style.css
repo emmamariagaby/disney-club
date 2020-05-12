@@ -18,6 +18,8 @@
 }
 
 header {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   background-color: #59c173;
   position: sticky;
@@ -56,7 +58,7 @@ a.active1, a.active2, a.active3, a.active4 {
 
 .wrapper-content-bigger, form {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   border-width: 100%;
   border: 5px;
   border-style: outset;
@@ -77,16 +79,7 @@ a.active1, a.active2, a.active3, a.active4 {
   background: #5d26c1;
 }
 
-.login {
-  width: 350px;
-  padding: 10% 0 0 0;
-  margin: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.form {
+form {
   position: relative;
   margin: 0 auto;
   padding: 20px;
@@ -96,7 +89,7 @@ a.active1, a.active2, a.active3, a.active4 {
   margin-right: auto;
 }
 
-.form input {
+form input {
   outline: 1;
   background: white;
   width: 100%;
@@ -109,7 +102,7 @@ a.active1, a.active2, a.active3, a.active4 {
   margin-right: auto;
 }
 
-.form button {
+form button {
   outline: 0;
   background: #59c173;
   width: 50%;
@@ -119,22 +112,8 @@ a.active1, a.active2, a.active3, a.active4 {
   border: 0;
 }
 
-.form button:hover, .form button:active {
+form button:hover, form button:active {
     background: lightblue;
-}
-
-.form .message {
-    margin: 15px 0 0;
-}
-
-.form .message a {
-    color: lightblue;
-    text-decoration: none;
-    font-size: small;
-}
-
-.form .register-form {
-    display: none;
 }
 
 .img-disneybanner {
@@ -143,27 +122,9 @@ a.active1, a.active2, a.active3, a.active4 {
   padding: 10px 0px 30px 0px;
 }
 
-.text-info p {
-  text-align: center;
-  padding: 0px 40px 30px;
-  font-size: 15px;
-  color: darkblue;
-  line-height: 30px;
-  position: relative;
-  top: 20px;
+article p {
+  margin: 3rem;
 }
-
-.text-info h2 {
-  position: relative;
-  top: 30px;
-  text-align: center;
-  padding: 30px 20px 20px;
-  font-size: 20px;
-  color: darkblue;
-  line-height: 44px;
-}
-
-
 
 .allCharacters {
   display: flex;
@@ -171,8 +132,10 @@ a.active1, a.active2, a.active3, a.active4 {
   color: darkblue;
 }
 
-h3 {
+h3, h4 {
    text-align: center; 
+   color: darkblue;
+   margin: 2rem
 }
 
 #getAllCharacters {
@@ -193,22 +156,65 @@ h3 {
   border-radius: 0.2rem;
 }
 
+#create, #updateCharacter, #deleteCharacter {
+  width: 30rem;
+}
+
+.createNew, .update-character, .delete-character {
+  margin: 2rem;
+  display: flex;
+}
+
+.myCharacters {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-characters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: darkblue;
+}
+
 @media only screen and (min-width: 768px) {
   /* tablet */
-  .wrapper-content-bigger {
-    height: 800px;
+  header {
+    flex-direction: row;
   }
+
+  .myCharacters {
+    display: flex;
+   flex-direction: row;
+    justify-content: space-evenly;
+  }
+  
+  .my-characters {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+
   .wrapper-content-smaller form {
     width: 30%;
-  
   }
 }
 
 @media only screen and (min-width: 800px) {
   /* dekstop */
-  .wrapper-content-bigger {
-    height: 800px;
+ 
+  .myCharacters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
+  
+  .my-characters {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+
   .wrapper-content-smaller form {
     width: 30%;
   
