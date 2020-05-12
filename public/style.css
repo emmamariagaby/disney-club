@@ -132,7 +132,7 @@ article p {
   color: darkblue;
 }
 
-h3, h4 {
+h2, h3, h4 {
    text-align: center; 
    color: darkblue;
    margin: 2rem
@@ -140,8 +140,8 @@ h3, h4 {
 
 #getAllCharacters {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   margin: 3rem;
 }
 
@@ -184,15 +184,19 @@ h3, h4 {
   }
 
   .myCharacters {
-    display: flex;
-   flex-direction: row;
+    flex-direction: row;
     justify-content: space-evenly;
   }
   
   .my-characters {
-    display: flex;
     flex-direction: column;
     width: 45%;
+  }
+
+  #getAllCharacters {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 
   .wrapper-content-smaller form {
@@ -204,15 +208,19 @@ h3, h4 {
   /* dekstop */
  
   .myCharacters {
-    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
   }
   
   .my-characters {
-    display: flex;
     flex-direction: column;
     width: 45%;
+  }
+
+  #getAllCharacters {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 
   .wrapper-content-smaller form {
