@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="./client.js"></script>
+    <link rel="stylesheet" href="styleLogin.css">
+    <script defer src="./clientLogin.js"></script>
     <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
     <title>Disney-Club</title>
 </head>
 
 <body>
     <div class="wrapper">
+        <a href="index1.html">Home</a>
         <img class="img-disneybanner" src="assets/images/waltdisney.png" alt="image">
         <div class="wrapper-content-bigger">
             <div class="wrapper-content-smaller">
@@ -32,46 +33,10 @@
                         <p class="message">Not Registered? <a href="#">Register</a></p>
                     </form>
                 </div>
-                <article class="text-info">
-                    <h2>Disney-Club</h2>
-                    <p>text info text info text info text info text info text info text info text info
-                        text info text info text info text info text info text info text info text info text info text
-                        info</p>
-                </article>
             </div>
         </div>
     </div>
-    <h3>All Characters</h3>
-    <div id="getAllCharacters"></div>
-    <h3>Create A New Character</h3>
-    <div class="createNew">
-        <form id="create" method='POST'>
-            <input id="name" name="name" type="text" placeholder="Name">
-            <input id="movie" name="movie" type="text" placeholder="Movie">
-            <input id="bestFriend" name="bestFriend" type="text" placeholder="Best Friend">
-            <button type="submit">Add Disney Character</button>
-            <div id="message"></div>
-        </form>
-    </div>
-    <h3>Update A Character</h3>
-    <div class="update-character">
-        <form id="updateCharacter" method='PUT'>
-            <input id="updateId" name="id" type="text" placeholder="Id">
-            <input id="updateName" name="name" type="text" placeholder="Name">
-            <input id="updateMovie" name="movie" type="text" placeholder="Movie">
-            <input id="updateBestFriend" name="bestFriend" type="text" placeholder="Best Friend">
-            <button type="submit">Update Disney Character</button>
-            <div id="updateMessage"></div>
-        </form>
-    </div>
-    <h3>Delete A Character</h3>
-    <div class="delete-character">
-        <form id="deleteCharacter" method='DELETE'>
-            <input id="deleteId" name="id" type="text" placeholder="Id">
-            <button type="submit">Delete Disney Character</button>
-            <div id="deleteMessage"></div>
-        </form>
-    </div>
+</div>
 </body>
 
 </html>
