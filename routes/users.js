@@ -28,7 +28,6 @@ router.post("/login", async (req, res) => {
     }
 
   req.session.username = user.username
-  req.session.userId = user._id
    
   res.send('You are logged in')
 })
