@@ -3,13 +3,12 @@ GET http://localhost:3000/characters
 ###
 
 
-POST http://localhost:3000/characters
+POST http://localhost:3000/users
 Content-Type: application/json
 
 {
- "name": "Jasmine",
- "movie": "Aladdin",
- "bestFriend": "Alladdin"
+    "username": "Jasmine",
+    "password": "Aladdin"
 }
 
 ###
