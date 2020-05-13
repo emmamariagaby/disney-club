@@ -1,15 +1,23 @@
-GET http://localhost:3000/characters
+GET http://localhost:3000/users
 
 ###
 
-
-POST http://localhost:3000/characters
+POST http://localhost:3000/users/register
 Content-Type: application/json
 
 {
- "name": "Jasmine",
- "movie": "Aladdin",
- "bestFriend": "Alladdin"
+    "username": "Louise",
+    "password": "123456"
+}
+
+###
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "username": "Louise",
+    "password": "123456"
 }
 
 ###
@@ -24,4 +32,5 @@ Content-Type: application/json
 }
 
 ###
+
 DELETE http://localhost:3000/characters/5eb45b983e41f962754e16ac
