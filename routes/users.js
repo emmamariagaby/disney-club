@@ -3,7 +3,7 @@ const userModel = require('../models/userModel')
 const router = express()
 const bcrypt = require('bcrypt')
 
-// Create
+// Register user
 router.post('/register', async (req, res) => {
 
     try {
@@ -19,10 +19,11 @@ router.post('/register', async (req, res) => {
     }
 })
 
+// Login user
 router.post("/login", async (req, res) => {
     const user = await userModel.findOne({ username: req.body.username })
 
-    if(!user || !(await bcrypt.compare(req.body.password, user.password))) {
+    if (!user || !(await bcrypt.compare(req.body.password, user.password))) {
        return res.status(401).json('Wrong username or password')
     }
 
@@ -32,7 +33,7 @@ router.post("/login", async (req, res) => {
   res.send('You are logged in')
 })
 
-// Read
+// Get all users
 router.get('/', async (req, res) => {
 
     try {
