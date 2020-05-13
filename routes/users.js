@@ -1,13 +1,17 @@
 const express = require('express')
 const userModel = require('../models/userModel')
 const router = express()
-
+const bcrypt = require('bcrypt')
 
 // Create
-router.post('/users', async (req, res) => {
-    const user = new userModel(req.body)
+router.post('/register', async (req, res) => {
 
     try {
+        const password = await bcrypt.hash(req.body.password, 10)
+        const user = new userModel({
+        username: req.body.username,
+        password: password
+    })
         await user.save()
         res.send(user)
     } catch (err) {
@@ -15,38 +19,30 @@ router.post('/users', async (req, res) => {
     }
 })
 
+router.post("/login", async (req, res) => {
+    const user = await userModel.findOne({ username: req.body.username })
+
+    if(!user || !(await bcrypt.compare(req.body.password, user.password))) {
+       return res.status(401).json('Wrong username or password')
+    }
+
+  req.session.username = user.username
+  req.session.userId = user._id
+   
+  res.send('You are logged in')
+})
+
 // Read
-router.get('/users', async (req, res) => {
-    const users = await userModel.find({})
+router.get('/', async (req, res) => {
 
     try {
+        const users = await userModel.find()
         res.send(users)
     } catch (err) {
         res.status(500).send(err)
     }
 })
 
-router.put('/users/:id', async (req, res) => {
-    try {
-        const user = await userModel.findByIdAndUpdate(req.params.id)
-        await userModel.findByIdAndUpdate(req.params.id, req.body)
-        await userModel.save()
-        res.send(user)
-    } catch (err) {
-        res.status(500).send(err)
-    }
-})
-
-router.delete('/users/:id', async (req, res) => {
-    try {
-        const user = await userModel.findByIdAndDelete(req.params.id)
-
-        if (!user) res.status(404).send("No user found")
-        res.status(200).send()
-    } catch (err) {
-        res.status(500).send(err)
-    }
-})
 
 
 module.exports = router
