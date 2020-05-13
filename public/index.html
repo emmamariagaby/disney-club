@@ -18,17 +18,16 @@
             <div class="wrapper-content-smaller">
                 <!-- Registraton form -->
                 <div class="form">
-                    <form class="register-form">
-                        <input type="text" placeholder="user name" required/>
-                        <input type="text" placeholder="password" required/>
-                        <input type="text" placeholder="email" required/>
-                        <button>Create</button>
+                    <form class="register-form" action="/users/register" method="POST">
+                        <input type="text" name="username" placeholder="user name" required />
+                        <input type="text" name="password" placeholder="password" required />
+                        <button type="submit">Create</button>
                         <p class="message">Already Registered? <a href="#">Login</a></p>
                     </form>
                     <!-- Login form -->
                     <form class="login-form">
-                        <input type="text" placeholder="user name" required/>
-                        <input type="password" placeholder="password" required/>
+                        <input type="text" placeholder="user name" required />
+                        <input type="password" placeholder="password" required />
                         <button>Login</button>
                         <p class="message">Not Registered? <a href="#">Register</a></p>
                     </form>
@@ -36,7 +35,7 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 </body>
 
 </html>

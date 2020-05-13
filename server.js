@@ -5,6 +5,9 @@ const users = require('./routes/users')
 const app = express()
 const chalk = require("chalk");
 const cookieSession = require('cookie-session')
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.urlencoded({ extended: false })) //Post Body Parser
 
 app.use(express.json())
 app.use(express.static('public'))
@@ -24,6 +27,10 @@ app.use(cookieSession({
 }))
 
 app.get('/', (req, res) => res.send('Welcome to Disney-Club'))
+
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+});
 
 app.use(characters)
 app.use('/users', users)
