@@ -12,7 +12,7 @@ router.post('/register', async (req, res) => {
         username: req.body.username,
         password: password
         })
-        
+
         const findUser = await userModel.findOne ({ username: req.body.username })
     
         if (!findUser) {
@@ -47,6 +47,19 @@ router.get('/', async (req, res) => {
     try {
         const users = await userModel.find()
         res.send(users)
+
+    } catch (err) {
+        res.status(500).send(err)
+    }
+})
+
+// Logout user
+router.delete('/logout', async (req, res) => {
+
+    try {
+
+    req.session = null
+    res.send('You are now logged out!')
 
     } catch (err) {
         res.status(500).send(err)
