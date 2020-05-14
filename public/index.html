@@ -12,8 +12,8 @@
 
 <body>
     <div class="wrapper">
-        <a href="index1.html">Home</a>
         <img class="img-disneybanner" src="assets/images/waltdisney.png" alt="image">
+        <h3><a href="index1.html">To The Disney Club</a></h3>
         <div class="wrapper-content-bigger">
             <div class="wrapper-content-smaller">
                 <!-- Registraton form -->
@@ -25,7 +25,7 @@
                         <p class="message">Already Registered? <a href="/#login">Login</a></p>
                     </form>
                     <!-- Login form -->
-                    <form id="login-form" class="login-form" action="/users/auth" method="POST">
+                    <form id="login-form" class="login-form" action="/users/login" method="POST">
                         <input type="text" name="username" placeholder="user name" required />
                         <input type="password" name="password" placeholder="password" required />
                         <button onclick="openSiteLogin('/index1.html')" type="submit">Login</button>

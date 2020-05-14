@@ -1,3 +1,7 @@
+GET http://localhost:3000/users
+
+###
+
 GET http://localhost:3000/users/auth
 
 ###
@@ -18,17 +22,6 @@ Content-Type: application/json
 {
     "username": "Ellen",
     "password": "123456"
-}
-
-###
-
-PUT http://localhost:3000/characters/5eb45b983e41f962754e16ac
-Content-Type: application/json
-
-{
-    "name": "Jasmine",
-    "movie": "Aladdin",
-    "bestFriend": "Aladdin"
 }
 
 ###

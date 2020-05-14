@@ -20,13 +20,13 @@ app.use((req, res, next) => {
 
 app.use(cors({
     credentials: true,
-    origin: "http://localhost:3000"
+    origin: 'http://localhost:3000'
    }))
     
 
 
 app.use(cookieSession({
-    secret: 'aVeryS3cr3tK3y',
+    secret: 'secretKey',
     maxAge: 1000 * 10, // 10s
     sameSite: 'strict',
     httpOnly: true,

@@ -3,6 +3,7 @@ const userModel = require('../models/userModel')
 const router = express()
 const bcrypt = require('bcrypt')
 
+
 // Register user
 router.post('/register', async (req, res) => {
 
@@ -27,8 +28,9 @@ router.post('/register', async (req, res) => {
     }
 })
 
+
 // Login user
-router.post("/login", async (req, res) => {
+router.post('/login', async (req, res) => {
 
     try {
      const user = await userModel.findOne({ username: req.body.username })
@@ -48,6 +50,7 @@ router.post("/login", async (req, res) => {
 })
 
 
+// Authenticate user
 router.get('/auth', async (req, res) => {
 
     try {
@@ -62,6 +65,7 @@ router.get('/auth', async (req, res) => {
     }
 })
 
+
 // Get all users
 router.get('/', async (req, res) => {
 
@@ -73,6 +77,7 @@ router.get('/', async (req, res) => {
         res.status(500).send(err)
     }
 })
+
 
 // Logout user
 router.delete('/logout', async (req, res) => {

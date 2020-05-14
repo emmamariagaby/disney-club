@@ -13,6 +13,7 @@ function openSiteLogin(url) {
     var win2 = window.location.replace('/index1.html');
 }
 
+// Login user
 const form = document.getElementById('login-form')
 form.addEventListener('submit', loginUser)
 

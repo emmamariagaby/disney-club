@@ -39,6 +39,15 @@
     margin-right: auto;
     background: #5d26c1;
   }
+
+  a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+  }
   
   .login {
       width: 350px;

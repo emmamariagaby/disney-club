@@ -37,7 +37,7 @@ a {
   color: white;
   text-align: center;
   text-decoration: none;
-  margin: 1rem;
+  margin: 2rem;
   padding: 0.5rem;
   border-radius: 0.2rem;
 }
@@ -124,6 +124,7 @@ form button:hover, form button:active {
 
 article p {
   margin: 3rem;
+  text-align: center;
 }
 
 .allCharacters {
