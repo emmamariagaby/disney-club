@@ -32,3 +32,5 @@ function allCharacters(characters) {
     })
 }
 
+
+

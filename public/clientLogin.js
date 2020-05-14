@@ -35,9 +35,9 @@ function loginUser(event) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(user)
-       
-    })
+        body: JSON.stringify(user),
+        credentials: 'include'
+        })
 
     console.log(user.username + " is logged in")
 }
