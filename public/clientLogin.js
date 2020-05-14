@@ -4,6 +4,11 @@ $('.message a').click(function () {
 });
 
 // redirect from create to login
-function openSite(url) {
+function openSiteCreate(url) {
 var win = window.open('/#login');
 }
+
+// redirect from login to website
+function openSiteLogin(url) {
+    var win2 = window.open('/index1.html');
+    }
