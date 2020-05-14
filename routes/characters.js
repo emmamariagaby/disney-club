@@ -5,11 +5,18 @@ const router = express()
 
 // Create
 router.post('/characters', async (req, res) => {
-  const character = new characterModel(req.body)
-
+  
   try {
-    await character.save()
-    res.send(character)
+    const character = new characterModel(req.body)
+    const findCharacter = await characterModel.findOne ({ name: req.body.name })
+
+    if (!findCharacter) {
+      await character.save()
+      res.send(character) 
+      } else {
+        res.status(400).json('Character already exists')
+      }
+
   } catch (err) {
     res.status(500).send(err)
   }
@@ -17,10 +24,12 @@ router.post('/characters', async (req, res) => {
 
 // Read
 router.get('/characters', async (req, res) => {
-    const characters = await characterModel.find({})
+    
   
     try {
+      const characters = await characterModel.find()
       res.send(characters)
+
     } catch (err) {
       res.status(500).send(err)
     }
@@ -33,30 +42,29 @@ router.put('/characters/:id', async (req, res) => {
     const id = req.params.id
     const character = await characterModel.findByIdAndUpdate(id, req.body)
     await character.save()
+    
     res.json({
       old: character,
       new: req.body  
     })
   
   } catch (err) {
-    if (err.code = 11000) {
-      res.status(400).json('Character has already been created')
-    } else {
     res.status(500).send(err)
   }
-}
 })
 
 // Delete
 router.delete('/characters/:id', async (req, res) => {
-    try {
-      const character = await characterModel.findByIdAndDelete(req.params.id)
-  
-      if (!character) res.status(404).send("No item found")
-      res.status(200).send()
-    } catch (err) {
-      res.status(500).send(err)
-    }
-  })
+    
+  try {
+    const character = await characterModel.findByIdAndDelete(req.params.id)
+
+    if (!character) res.status(404).send("No item found")
+    res.status(200).send()
+    
+  } catch (err) {
+    res.status(500).send(err)
+  }
+})
 
 module.exports = router

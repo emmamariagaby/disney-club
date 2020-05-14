@@ -6,7 +6,7 @@ POST http://localhost:3000/users/register
 Content-Type: application/json
 
 {
-    "username": "Louise",
+    "username": "Ellen",
     "password": "123456"
 }
 
@@ -16,7 +16,7 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "username": "Louise",
+    "username": "Ellen",
     "password": "123456"
 }
 
@@ -26,11 +26,18 @@ PUT http://localhost:3000/characters/5eb45b983e41f962754e16ac
 Content-Type: application/json
 
 {
- "name": "Jasmine",
- "movie": "Aladdin",
- "bestFriend": "Aladdin"
+    "name": "Jasmine",
+    "movie": "Aladdin",
+    "bestFriend": "Aladdin"
 }
 
 ###
 
-DELETE http://localhost:3000/characters/5eb45b983e41f962754e16ac
+DELETE http://localhost:3000/users/logout
+
+Content-Type: application/json
+
+{  
+    "username": "Ellen",
+    "password": "123456"
+}
