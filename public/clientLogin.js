@@ -5,12 +5,12 @@ $('.message a').click(function () {
 
 // redirect from create to login
 function openSiteCreate(url) {
-var win = window.open('/#login');
+var win = window.location.replace('/#login');
 }
 
 // redirect from login to website
 function openSiteLogin(url) {
-    var win2 = window.open('/index1.html');
+    var win2 = window.location.replace('/index1.html');
 }
 
 const form = document.getElementById('login-form')
