@@ -18,14 +18,14 @@
             <div class="wrapper-content-smaller">
                 <!-- Registraton form -->
                 <div class="form">
-                    <form id="register-form" action="/users/register" method="POST">
+                    <form id="register-form" class="register-form" action="/users/register" method="POST">
                         <input type="text" name="username" placeholder="user name" required />
                         <input type="text" name="password" placeholder="password" required />
                         <button onclick="openSiteCreate('/#login')" type="submit">Create</button>
                         <p class="message">Already Registered? <a href="/#login">Login</a></p>
                     </form>
                     <!-- Login form -->
-                    <form id="login-form" action="/users/auth" method="POST">
+                    <form id="login-form" class="login-form action="/users/auth" method="POST">
                         <input type="text" name="username" placeholder="user name" required />
                         <input type="password" name="password" placeholder="password" required />
                         <button onclick="openSiteLogin('/index1.html')" type="submit">Login</button>
