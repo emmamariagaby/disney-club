@@ -29,7 +29,9 @@ router.post('/register', async (req, res) => {
 
 // Login user
 router.post("/login", async (req, res) => {
-    const user = await userModel.findOne({ username: req.body.username })
+
+    try {
+     const user = await userModel.findOne({ username: req.body.username })
 
     if (!user || !(await bcrypt.compare(req.body.password, user.password))) {
        
@@ -40,7 +42,9 @@ router.post("/login", async (req, res) => {
         res.status(200).json('You are logged in')
     }
 
-    
+    }catch (err) {
+        res.status(500).send(err)
+    }
 })
 
 
