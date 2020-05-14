@@ -6,6 +6,7 @@ const app = express()
 const chalk = require("chalk");
 const cookieSession = require('cookie-session')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 app.use(bodyParser.urlencoded({ extended: false })) //Post Body Parser
 
@@ -16,6 +17,12 @@ app.use((req, res, next) => {
     res.setHeader('Content-Type', 'application/json')
     next()
 })
+
+app.use(cors({
+    credentials: true,
+    origin: "http://localhost:3000"
+   }))
+    
 
 
 app.use(cookieSession({

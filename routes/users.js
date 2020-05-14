@@ -34,11 +34,28 @@ router.post("/login", async (req, res) => {
     if (!user || !(await bcrypt.compare(req.body.password, user.password))) {
        
         return res.status(401).json('Wrong username or password')
+    } else {
+        req.session.username = user
+    
+        res.status(200).json('You are logged in')
     }
 
-    req.session.username = user.username
     
-    res.status(200).json('You are logged in')
+})
+
+
+router.get('/auth', async (req, res) => {
+
+    try {
+       if(req.session.user) {
+           res.status(200).json(req.session.user)
+       } else {
+        res.status(400).send()
+       }
+
+    } catch (err) {
+        res.status(500).send(err)
+    }
 })
 
 // Get all users
