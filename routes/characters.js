@@ -25,7 +25,6 @@ router.post('/characters', requireSignIn, async (req, res) => {
 
 // Read
 router.get('/characters', async (req, res) => {
-    
   
     try {
       const characters = await characterModel.find()

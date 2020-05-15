@@ -8,7 +8,8 @@ Content-Type: application/json
 {
     "name": "Sven",
     "movie": "Frozen",
-    "bestFriend": "Olof"
+    "bestFriend": "Olof",
+    "user": "5ebbeeb82624be44eccf8ba5"
 }
 
 ###

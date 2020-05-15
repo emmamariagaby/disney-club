@@ -1,4 +1,4 @@
-/* //form, login and create
+//form, login and create
 $('.message a').click(function () {
     $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
 });
@@ -6,9 +6,12 @@ $('.message a').click(function () {
 // redirect from create to login
 function openSiteCreate(url) {
 var win = window.location.replace('/#login');
-} */
+}
 
-
+// redirect from login to website
+function openSiteLogin(url) {
+    var win2 = window.replace('/index1.html');
+    }
 
 // Login user
 const form = document.getElementById('login-form')
@@ -28,7 +31,7 @@ function loginUser(event) {
         user[key] = value
     }
 
-    request.post("/users/login", {
+    fetch("/users/login", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
