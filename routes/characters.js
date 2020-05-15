@@ -1,10 +1,11 @@
 const express = require('express')
 const characterModel = require('../models/characterModel')
 const router = express()
+const requireSignIn = require('../auth')
 
 
 // Create
-router.post('/characters', async (req, res) => {
+router.post('/characters', requireSignIn, async (req, res) => {
   
   try {
     const character = new characterModel(req.body)

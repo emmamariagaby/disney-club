@@ -1,4 +1,4 @@
-//form, login and create
+/* //form, login and create
 $('.message a').click(function () {
     $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
 });
@@ -6,12 +6,9 @@ $('.message a').click(function () {
 // redirect from create to login
 function openSiteCreate(url) {
 var win = window.location.replace('/#login');
-}
+} */
 
-// redirect from login to website
-function openSiteLogin(url) {
-    var win2 = window.location.replace('/index1.html');
-}
+
 
 // Login user
 const form = document.getElementById('login-form')
@@ -31,14 +28,24 @@ function loginUser(event) {
         user[key] = value
     }
 
-    fetch("/users/login", {
+    request.post("/users/login", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user),
         credentials: 'include'
-        })
+        }).then((response) => {
+
+            if(response.status === 401) {
+               console.log('Wrong username or password')
+            } else { 
+                return response.json()
+            }
+
+        }).then(
+            openSiteLogin()
+        )
 
     console.log(user.username + " is logged in")
 }

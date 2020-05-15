@@ -7,7 +7,7 @@ Content-Type: application/json
 
 {
     "name": "Sven",
-    "movie": "Froze",
+    "movie": "Frozen",
     "bestFriend": "Olof"
 }
 

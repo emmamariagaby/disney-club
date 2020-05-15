@@ -1,10 +1,24 @@
 const mongoose = require('mongoose')
 
 let CharacterSchema = new mongoose.Schema({
-    name: String,
-    movie: String,
-    bestFriend: String
+    name: {
+        type: String,
+        required: true
+      },
+    movie: {
+        type: String,
+        required: true
+      },
+    bestFriend:{
+        type: String,
+        required: true
+      },
+    user: {
+        type: mongoose.Types.ObjectId,
+        ref: 'user',
+        required: true
+    }
 })
 
-const Character = mongoose.model('Character', CharacterSchema)
+const Character = mongoose.model('character', CharacterSchema)
 module.exports = Character
