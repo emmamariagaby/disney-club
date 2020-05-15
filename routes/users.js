@@ -54,8 +54,8 @@ router.post('/login', async (req, res) => {
 router.get('/auth', async (req, res) => {
 
     try {
-       if(req.session.user) {
-           res.status(200).json(req.session.user)
+       if(req.session.username) {
+           res.status(200).json(req.session.username)
        } else {
         res.status(400).send()
        }

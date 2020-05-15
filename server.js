@@ -22,13 +22,17 @@ app.use(cookieSession({
     secure: false,
 }))
 
+app.use(characters)
+app.use('/users', users)
+
 app.get('/index1.html', (req, res, next) => {
     if (req.session.username) {
-        next()
+      next() 
     } else {
         res.status(300).redirect('/#login')
     }
 })
+
 app.use(express.static('public'))
 
 app.use((req, res, next) => {
@@ -36,8 +40,7 @@ app.use((req, res, next) => {
     next()
 })
 
-app.use(characters)
-app.use('/users', users)
+
 
 
 app.listen(3000, () => console.log(chalk.blue("Server is running at: http://localhost:3000")));

@@ -6,21 +6,21 @@ POST http://localhost:3000/characters
 Content-Type: application/json
 
 {
-    "name": "Tiger",
-    "movie": "Winnie The Poh",
-    "bestFriend": "Piglet",
+    "name": "Lightning McQueen",
+    "movie": "Cars",
+    "bestFriend": "Mater",
     "user": "5ebbf1272954922b3ce7c0df"
 }
 
 ###
 
-PUT http://localhost:3000/characters/5eb3e4553a0fcc8d00be45ac
+PUT http://localhost:3000/characters/5ebe93e5164a0525f0cae997
 Content-Type: application/json
 
 {
-    "name": "Jasmine",
-    "movie": "Aladdin",
-    "bestFriend": "Aladdi",
+    "name": "Lightning McQueen",
+    "movie": "Cars",
+    "bestFriend": "Mater",
     "user": "5ebbf1272954922b3ce7c0df"
 }
 

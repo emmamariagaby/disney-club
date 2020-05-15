@@ -36,7 +36,7 @@ router.get('/characters', async (req, res) => {
   })
 
 // Update
-router.put('/characters/:id', async (req, res) => {
+router.put('/characters/:id', requireSignIn, async (req, res) => {
 
   try {
     const id = req.params.id
@@ -54,7 +54,7 @@ router.put('/characters/:id', async (req, res) => {
 })
 
 // Delete
-router.delete('/characters/:id', async (req, res) => {
+router.delete('/characters/:id', requireSignIn, async (req, res) => {
     
   try {
     const character = await characterModel.findByIdAndDelete(req.params.id)

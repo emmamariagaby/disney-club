@@ -31,6 +31,6 @@ DELETE http://localhost:3000/users/logout
 Content-Type: application/json
 
 {  
-    "username": "Ellen",
+    "username": "Elias",
     "password": "123456"
 }

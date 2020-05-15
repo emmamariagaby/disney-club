@@ -154,7 +154,9 @@ h2, h3, h4 {
   background-image: linear-gradient(#59c173, #a17fe0, #5d26c1);
   background-color: #59c173;
   padding: 1rem;
+  width: 15rem;
   border-radius: 0.2rem;
+  color: lightblue
 }
 
 #create, #updateCharacter, #deleteCharacter {
@@ -203,6 +205,10 @@ h2, h3, h4 {
   .wrapper-content-smaller form {
     width: 30%;
   }
+
+  .all {
+    width: 20rem;
+  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -219,13 +225,16 @@ h2, h3, h4 {
   }
 
   #getAllCharacters {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    
+    justify-content: space-around;
   }
 
   .wrapper-content-smaller form {
     width: 30%;
   
+  }
+
+  .all {
+    width: 20rem;
   }
 }
