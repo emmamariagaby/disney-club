@@ -10,7 +10,7 @@ function openSiteCreate() {
 
 // redirect from login to website
 function openSiteLogin() {
-    window.location.replace('/index1.html');
+    window.location = '/index1.html'
 }
 
 // Login user

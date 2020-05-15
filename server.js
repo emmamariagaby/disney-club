@@ -8,9 +8,27 @@ const cookieSession = require('cookie-session')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-app.use(bodyParser.urlencoded({ extended: false })) //Post Body Parser
-
+app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
+app.use(cors({
+    credentials: true,
+    origin: 'http://localhost:3000'
+}))
+app.use(cookieSession({
+    secret: 'secretKey',
+    maxAge: 1000 * 1000, // 10s
+    sameSite: 'strict',
+    httpOnly: true,
+    secure: false,
+}))
+
+app.get('/index1.html', (req, res, next) => {
+    if (req.session.username) {
+        next()
+    } else {
+        res.status(300).redirect('/#login')
+    }
+})
 app.use(express.static('public'))
 
 app.use((req, res, next) => {
@@ -18,30 +36,8 @@ app.use((req, res, next) => {
     next()
 })
 
-app.use(cors({
-    credentials: true,
-    origin: 'http://localhost:3000'
-   }))
-    
-
-
-app.use(cookieSession({
-    secret: 'secretKey',
-    maxAge: 1000 * 10, // 10s
-    sameSite: 'strict',
-    httpOnly: true,
-    secure: false,
-}))
-
-app.get('/', (req, res) => res.send('Welcome to Disney-Club'))
-
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
-});
-
 app.use(characters)
 app.use('/users', users)
 
 
-app.listen(3000, () => console.log(chalk.blue("Server is running at: http://localhost:3000"))
-);
+app.listen(3000, () => console.log(chalk.blue("Server is running at: http://localhost:3000")));
