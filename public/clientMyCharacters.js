@@ -23,7 +23,7 @@ function createNew(event) {
     let createContainer = document.getElementById("message")
 
     let message = document.createElement("h4")
-    message.innerText = "En ny Disneyfigur har lagts till"
+    message.innerText = "A new Disney character has been added!"
     createContainer.appendChild(message)
 
     setTimeout(function () {
@@ -58,7 +58,7 @@ function update(event) {
     let createContainer = document.getElementById("updateMessage")
 
     let updateMessage = document.createElement("h4")
-    updateMessage.innerText = name + " har uppdaterats"
+    updateMessage.innerText = name + " has been updated"
     createContainer.appendChild(updateMessage)
 
     setTimeout(function () {
@@ -91,7 +91,7 @@ function deleteCharacter(event) {
     let deletecontainer = document.getElementById("deleteMessage")
 
     let deleteMessage = document.createElement("h4")
-    deleteMessage.innerText = id + " har raderats"
+    deleteMessage.innerText = id + " has been deleted"
     deletecontainer.appendChild(deleteMessage)
 
     setTimeout(function () {

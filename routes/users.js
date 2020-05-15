@@ -85,7 +85,7 @@ router.delete('/logout', async (req, res) => {
     try {
 
     req.session = null
-    res.send('You are now logged out!')
+    res.status(200).json('You are now logged out!')
 
     } catch (err) {
         res.status(500).send(err)

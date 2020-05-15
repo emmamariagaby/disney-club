@@ -59,7 +59,7 @@ router.delete('/characters/:id', async (req, res) => {
   try {
     const character = await characterModel.findByIdAndDelete(req.params.id)
 
-    if (!character) res.status(404).send("No item found")
+    if (!character) res.status(404).json("No item found")
     res.status(200).send()
     
   } catch (err) {
