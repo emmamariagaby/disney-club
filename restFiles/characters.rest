@@ -6,15 +6,15 @@ POST http://localhost:3000/characters
 Content-Type: application/json
 
 {
-    "name": "Sven",
-    "movie": "Frozen",
-    "bestFriend": "Olof",
+    "name": "Olof",
+    "movie": "Froz",
+    "bestFriend": "Sven",
     "user": "5ebbeeb82624be44eccf8ba5"
 }
 
 ###
 
-PUT http://localhost:3000/characters/5ebdb391ca067b4b7888dc98
+PUT http://localhost:3000/characters/5ebe67dd8f972c38605cd70c
 Content-Type: application/json
 
 {

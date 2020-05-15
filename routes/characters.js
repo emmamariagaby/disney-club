@@ -1,6 +1,6 @@
 const express = require('express')
 const characterModel = require('../models/characterModel')
-const router = express()
+const router = express.Router()
 const requireSignIn = require('../auth')
 
 
