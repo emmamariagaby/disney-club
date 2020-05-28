@@ -5,7 +5,6 @@ const users = require('./routes/users')
 const app = express()
 const chalk = require("chalk");
 const cookieSession = require('cookie-session')
-const bodyParser = require('body-parser')
 const cors = require('cors')
 
 app.use(express.urlencoded({ extended: false }))
@@ -14,6 +13,13 @@ app.use(cors({
     credentials: true,
     origin: 'http://localhost:3000'
 }))
+
+app.use(express.static('public'))
+
+app.use((req, res, next) => {
+    res.setHeader('Content-Type', 'application/json')
+    next()
+})
 app.use(cookieSession({
     secret: 'secretKey',
     maxAge: 1000 * 1000, // 10s
@@ -22,23 +28,17 @@ app.use(cookieSession({
     secure: false,
 }))
 
-app.use(characters)
-app.use('/users', users)
-
 app.get('/index1.html', (req, res, next) => {
     if (req.session.username) {
       next() 
     } else {
-        res.status(300).redirect('/#login')
+        res.status(300).redirect('/index.html')
     }
 })
 
-app.use(express.static('public'))
+app.use(characters)
+app.use('/users', users)
 
-app.use((req, res, next) => {
-    res.setHeader('Content-Type', 'application/json')
-    next()
-})
 
 
 

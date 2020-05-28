@@ -1,24 +1,13 @@
 //form, login and create
 $('.message a').click(function () {
     $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
-});
-
-// redirect from create to login
-function openSiteCreate() {
-    window.location.replace('/#login');
-    }
-
-// redirect from login to website
-function openSiteLogin() {
-    window.location = '/index1.html'
-}
+})
 
 // Login user
 const form = document.getElementById('login-form')
 form.addEventListener('submit', loginUser)
 
 function loginUser(event) {
-    event.stopPropagation()
     event.preventDefault()
 
     const formData = new FormData(event.target)
@@ -46,9 +35,6 @@ function loginUser(event) {
                 return response.json()
             }
 
-        }).then(
-            openSiteLogin()
-        )
-
+        })
     console.log(user.username + " is logged in")
 }
