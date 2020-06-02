@@ -10,8 +10,10 @@ router.post('/characters', requireSignIn, async (req, res) => {
   try {
     const character = new characterModel(req.body)
     const findCharacter = await characterModel.findOne ({ name: req.body.name })
+    const user = characterModel.find({ userId: req.session.userId })
 
     if (!findCharacter) {
+      await user.save()
       await character.save()
       res.send(character) 
       } else {

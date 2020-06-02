@@ -13,7 +13,7 @@ let CharacterSchema = new mongoose.Schema({
         type: String,
         required: true
       },
-    user: {
+    userId: {
         type: mongoose.Types.ObjectId,
         ref: 'user',
         required: true
