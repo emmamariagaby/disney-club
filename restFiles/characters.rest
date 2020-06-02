@@ -1,4 +1,4 @@
-GET http://localhost:3000/characters
+GET http://localhost:3000/characters/5ebbeeb82624be44eccf8ba5
 
 ###
 
@@ -6,10 +6,10 @@ POST http://localhost:3000/characters/
 Content-Type: application/json
 
 {
-    "name": "Ellen",
-    "movie": "Frost",
-    "bestFriend": "Mickey",
-    "user": "5ebbeeb82624be44eccf8ba5"
+    "name": "Moln",
+    "movie": "Vind",
+    "bestFriend": "Vatten",
+    "userId": "5ebbeeb82624be44eccf8ba5"
 }
 
 ###

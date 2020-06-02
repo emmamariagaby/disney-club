@@ -119,6 +119,8 @@ function allCharacters(characters) {
         characterBestFriend.innerText = "Best Friend: " + character.bestFriend
         let characterId = document.createElement("p")
         characterId.innerText = "Disney Id : " + character._id
+        let userId = document.createElement("p")
+        userId.innerText = "User Id : " + character.user
 
         let characterDiv = document.createElement("div")
         characterDiv.classList.add("all")
@@ -128,6 +130,7 @@ function allCharacters(characters) {
         characterDiv.appendChild(characterMovie)
         characterDiv.appendChild(characterBestFriend)
         characterDiv.appendChild(characterId)
+        characterDiv.appendChild(userId)
 
         allCharactersContainer.appendChild(characterDiv)
     })

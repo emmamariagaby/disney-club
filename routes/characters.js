@@ -10,10 +10,8 @@ router.post('/characters', requireSignIn, async (req, res) => {
   try {
     const character = new characterModel(req.body)
     const findCharacter = await characterModel.findOne ({ name: req.body.name })
-    const user = characterModel.find({ userId: req.session.userId })
-
+   
     if (!findCharacter) {
-      await user.save()
       await character.save()
       res.send(character) 
       } else {
@@ -25,11 +23,24 @@ router.post('/characters', requireSignIn, async (req, res) => {
   }
 })
 
-// Read
-router.get('/characters', async (req, res) => {
+// Get all
+router.get('/characters/', async (req, res) => {
+  
+  try {
+    const characters = await characterModel.find()
+    res.send(characters)
+
+  } catch (err) {
+    res.status(500).send(err)
+  }
+})
+
+// Get from one user
+router.get('/characters/:user', async (req, res) => {
   
     try {
-      const characters = await characterModel.find()
+      const user = req.params.user
+      const characters = await characterModel.find(user)
       res.send(characters)
 
     } catch (err) {
