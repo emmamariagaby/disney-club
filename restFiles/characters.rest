@@ -1,4 +1,4 @@
-GET http://localhost:3000/characters/5ebbeeb82624be44eccf8ba5
+GET http://localhost:3000/characters/5ebbf1272954922b3ce7c0df
 
 ###
 

@@ -39,9 +39,13 @@ router.get('/characters/', async (req, res) => {
 router.get('/characters/:user', async (req, res) => {
   
     try {
-      const user = req.params.user
-      const characters = await characterModel.find(user)
-      res.send(characters)
+      const specificCharacters = await characterModel.find({user: req.params.user})
+      
+      if (specificCharacters.length == 0) {
+        res.status.length(404).json('User not found')
+      } else {
+        res.send(specificCharacters)
+      }
 
     } catch (err) {
       res.status(500).send(err)
