@@ -1,5 +1,6 @@
 const express = require('express')
 const characterModel = require('../models/characterModel')
+const userModel = require('../models/userModel')
 const router = express.Router()
 const requireSignIn = require('../auth')
 
@@ -36,7 +37,7 @@ router.get('/characters/', async (req, res) => {
 })
 
 // Get from one user
-router.get('/characters/:user', async (req, res) => {
+router.get('/usercharacters/:user', async (req, res) => {
   
     try {
       const specificCharacters = await characterModel.find({user: req.params.user})
@@ -54,20 +55,28 @@ router.get('/characters/:user', async (req, res) => {
 
 // Update
 router.put('/characters/:id', requireSignIn, async (req, res) => {
-
+  
   try {
     const id = req.params.id
+    const user = await userModel.findOne({ username: req.body.username })
     const character = await characterModel.findByIdAndUpdate(id, req.body)
-    await character.save()
+    req.session.username = user
+    if (user === req.session.username) {
+      await character.save()
+    } else { 
+      res.status(404).json('Not yours')
+    }
     
     res.json({
       old: character,
       new: req.body  
     })
-  
+    console.log(req.session.username)
+    console.log(user)
   } catch (err) {
     res.status(500).send(err)
   }
+ 
 })
 
 // Delete

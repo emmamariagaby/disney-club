@@ -1,4 +1,4 @@
-GET http://localhost:3000/characters/5ebbf1272954922b3ce7c0df
+GET http://localhost:3000/characters
 
 ###
 
@@ -6,22 +6,23 @@ POST http://localhost:3000/characters/
 Content-Type: application/json
 
 {
-    "name": "Moln",
-    "movie": "Vind",
-    "bestFriend": "Vatten",
-    "userId": "5ebbeeb82624be44eccf8ba5"
+    "name": "Jasmine",
+    "movie": "Aladdin",
+    "bestFriend": "Aladdin",
+    "username": "Elias",
+    "user": "5ebbf1272954922b3ce7c0df"
 }
 
 ###
 
-PUT http://localhost:3000/characters/5ebe93e5164a0525f0cae997
+PUT http://localhost:3000/characters/5ed81adc32ab0a3878812fce
 Content-Type: application/json
 
 {
-    "name": "Lightning McQueen",
-    "movie": "Cars",
-    "bestFriend": "Mater",
-    "user": "5ebbf1272954922b3ce7c0df"
+    "name": "Rosa",
+    "movie": "Aladdin",
+    "bestFriend": "Aladdin",
+    "username": "Elias"
 }
 
 ###

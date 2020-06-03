@@ -13,10 +13,13 @@ let CharacterSchema = new mongoose.Schema({
         type: String,
         required: true
       },
+    username:{
+      type: String,
+      required: true
+    },
     user: {
         type: mongoose.Types.ObjectId,
-        ref: 'user',
-        required: true
+        ref: 'user'
     }
 })
 
