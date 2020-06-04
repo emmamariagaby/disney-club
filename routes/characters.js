@@ -1,6 +1,5 @@
 const express = require('express')
 const characterModel = require('../models/characterModel')
-const userModel = require('../models/userModel')
 const router = express.Router()
 const requireSignIn = require('../auth')
 
@@ -57,22 +56,22 @@ router.get('/usercharacters/:user', async (req, res) => {
 router.put('/characters/:id', requireSignIn, async (req, res) => {
   
   try {
-    const id = req.params.id
-    const user = await userModel.findOne({ username: req.body.username })
-    const character = await characterModel.findByIdAndUpdate(id, req.body)
-    req.session.username = user
-    if (user === req.session.username) {
-      await character.save()
-    } else { 
-      res.status(404).json('Not yours')
-    }
+    const character = await characterModel.findOne({_id: req.params.id})
     
-    res.json({
-      old: character,
-      new: req.body  
-    })
-    console.log(req.session.username)
-    console.log(user)
+    if (!character) {
+      res.status(404).json('No character found')
+    } 
+
+    if (character.user == req.session.username._id){
+      await character.save()
+      res.json({
+        old: character,
+        new: req.body  
+      })
+    }
+
+    res.status(403).json('You can not change another users charcter!')
+    
   } catch (err) {
     res.status(500).send(err)
   }
@@ -83,10 +82,18 @@ router.put('/characters/:id', requireSignIn, async (req, res) => {
 router.delete('/characters/:id', requireSignIn, async (req, res) => {
     
   try {
-    const character = await characterModel.findByIdAndDelete(req.params.id)
+    const character = await characterModel.findOne({_id: req.params.id})
 
-    if (!character) res.status(404).json("No item found")
-    res.status(200).send()
+    if (!character) {
+      res.status(404).json('No character found')
+    } 
+
+    if (character.user == req.session.username._id){
+      await character.remove()
+      res.status(200).send('Your character was removed')
+    }
+
+    res.status(403).json('You can not delete another users charcter!')
     
   } catch (err) {
     res.status(500).send(err)

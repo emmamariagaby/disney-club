@@ -15,17 +15,17 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3000/characters/5ed81adc32ab0a3878812fce
+PUT http://localhost:3000/characters/5ebe87e2186906415cdb4d7f
 Content-Type: application/json
 
 {
-    "name": "Rosa",
-    "movie": "Aladdin",
-    "bestFriend": "Aladdin",
-    "username": "Elias"
+    "name": "Husa",
+    "movie": "Frozen",
+    "bestFriend": "Olof",
+    "username": "Ellen"
 }
 
 ###
 
-DELETE http://localhost:3000/characters/5ebdb391ca067b4b7888dc98
+DELETE http://localhost:3000/characters/5ebe93e5164a0525f0cae997
 
