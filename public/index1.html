@@ -22,20 +22,21 @@
         <img class="img-disneybanner" src="assets/images/waltdisney.png" alt="image">
         <div class="wrapper-content-bigger">
             <div class="wrapper-content-smaller">
+                <div id="user-login"></div>
                 <!-- Registraton form -->
                 <div class="form">
                     <form id="register-form" class="register-form" action="/users/register" method="POST">
-                        <input type="text" name="username" placeholder="user name" required />
+                        <input type="text" name="user" placeholder="user" required />
                         <input type="text" name="password" placeholder="password" required />
                         <button type="submit">Create</button>
-                        <p class="message">Already Registered?><a href="/#login">Login</a></p>
+                        <!--<p class="message">Already Registered?><a href="/#login">Login</a></p>-->
                     </form>
                     <!-- Login form -->
                     <form id="login-form" class="login-form" method="POST">
-                        <input type="text" name="username" placeholder="user name" required />
-                        <input type="password" name="password" placeholder="password" required />
+                        <input type="text" name="user" placeholder="user" required />
+                        <input type="text" name="password" placeholder="password" required />
                         <button type="submit">Login</button>
-                        <p class="message">Not Registered?<a href="/#register">Register</a></p>
+                        <!--<p class="message">Not Registered?<a href="/#register">Register</a></p>-->
                     </form>
                 </div>
             </div>

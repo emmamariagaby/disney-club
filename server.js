@@ -28,11 +28,11 @@ app.use(cookieSession({
     secure: false,
 }))
 
-app.get('/index1.html', (req, res, next) => {
-    if (req.session.username) {
+app.get('/index2.html', (req, res, next) => {
+    if (req.session.user) {
       next() 
     } else {
-        res.status(300).redirect('/index.html')
+        res.status(300).redirect('/index1.html')
     }
 })
 

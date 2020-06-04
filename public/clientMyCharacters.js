@@ -53,17 +53,23 @@ function update(event) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(updatedCharacter)
+    }).then((response) => {
+
+        if(response.status === 404) {
+           console.log('No character found')
+        }
+        if (response.status === 200) {
+            let createContainer = document.getElementById("updateMessage")
+            let updateMessage = document.createElement("h4")
+            updateMessage.innerText = name + " has been updated"
+            createContainer.appendChild(updateMessage)
+        }
+        if (response.status === 403) {
+            console.log('You can not change another users character!')
+        }
     })
 
-    let createContainer = document.getElementById("updateMessage")
-
-    let updateMessage = document.createElement("h4")
-    updateMessage.innerText = name + " has been updated"
-    createContainer.appendChild(updateMessage)
-
-    setTimeout(function () {
-        window.location.reload()
-    }, 1500)
+   
 
 }
 
@@ -120,9 +126,7 @@ function allCharacters(characters) {
         characterBestFriend.innerText = "Best Friend: " + character.bestFriend
         let characterId = document.createElement("p")
         characterId.innerText = "Disney Id : " + character._id
-        let userName = document.createElement("p")
-        userName.innerText = "Created By : " + character.username
-
+        
         let characterDiv = document.createElement("div")
         characterDiv.classList.add("all")
 
@@ -131,7 +135,6 @@ function allCharacters(characters) {
         characterDiv.appendChild(characterMovie)
         characterDiv.appendChild(characterBestFriend)
         characterDiv.appendChild(characterId)
-        characterDiv.appendChild(userName)
 
         allCharactersContainer.appendChild(characterDiv)
     })

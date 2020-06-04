@@ -10,7 +10,7 @@ POST http://localhost:3000/users/register
 Content-Type: application/json
 
 {
-    "username": "Ellen",
+    "user": "Ellen",
     "password": "123456"
 }
 
@@ -20,7 +20,7 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "username": "Elias",
+    "user": "ElEllenias",
     "password": "123456"
 }
 
@@ -31,6 +31,6 @@ DELETE http://localhost:3000/users/logout
 Content-Type: application/json
 
 {  
-    "username": "Ellen",
+    "user": "Elias",
     "password": "123456"
 }

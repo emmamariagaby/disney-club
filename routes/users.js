@@ -1,5 +1,6 @@
 const express = require('express')
 const userModel = require('../models/userModel')
+const characterModel = require('../models/characterModel')
 const router = express.Router()
 const bcrypt = require('bcrypt')
 
@@ -10,17 +11,17 @@ router.post('/register', async (req, res) => {
     try {
         const password = await bcrypt.hash(req.body.password, 10)
         const user = new userModel({
-        username: req.body.username,
+        user: req.body.user,
         password: password
         })
 
-        const findUser = await userModel.findOne ({ username: req.body.username })
+        const findUser = await userModel.findOne ({ user: req.body.user })
     
         if (!findUser) {
             await user.save()
             res.send(user)
         } else {
-            res.status(400).json('Username already exists')
+            res.status(400).json('user already exists')
         }
 
     } catch (err) {
@@ -33,13 +34,13 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
 
     try {
-     const user = await userModel.findOne({ username: req.body.username })
+     const user = await userModel.findOne({ user: req.body.user })
 
     if (!user || !(await bcrypt.compare(req.body.password, user.password))) {
        
-        return res.status(401).json('Wrong username or password')
+        return res.status(401).json('Wrong user or password')
     } else {
-        req.session.username = user
+        req.session.user = user
         console.log(user)
         res.status(200).json('You are logged in')
     }
@@ -54,8 +55,8 @@ router.post('/login', async (req, res) => {
 router.get('/auth', async (req, res) => {
 
     try {
-       if(req.session.username) {
-           res.status(200).json(req.session.username)
+       if(req.session.user) {
+           res.status(200).json(req.session.user)
        } else {
         res.status(400).send()
        }
@@ -91,7 +92,6 @@ router.delete('/logout', async (req, res) => {
         res.status(500).send(err)
     }
 })
-
 
 
 module.exports = router

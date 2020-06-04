@@ -8,7 +8,7 @@ const requireSignIn = require('../auth')
 router.post('/characters', requireSignIn, async (req, res) => {
   
   try {
-    const character = new characterModel(req.body)
+    const character = new characterModel({...req.body, user: req.session.user})
     const findCharacter = await characterModel.findOne ({ name: req.body.name })
    
     if (!findCharacter) {
@@ -35,42 +35,26 @@ router.get('/characters/', async (req, res) => {
   }
 })
 
-// Get from one user
-router.get('/usercharacters/:user', async (req, res) => {
-  
-    try {
-      const specificCharacters = await characterModel.find({user: req.params.user})
-      
-      if (specificCharacters.length == 0) {
-        res.status.length(404).json('User not found')
-      } else {
-        res.send(specificCharacters)
-      }
-
-    } catch (err) {
-      res.status(500).send(err)
-    }
-  })
-
 // Update
 router.put('/characters/:id', requireSignIn, async (req, res) => {
   
   try {
-    const character = await characterModel.findOne({_id: req.params.id})
+    const id = req.params.id;
+    const character = await characterModel.findByIdAndUpdate(id, req.body)
     
     if (!character) {
       res.status(404).json('No character found')
     } 
 
-    if (character.user == req.session.username._id){
+    if (character.user == req.session.user._id){
       await character.save()
       res.json({
         old: character,
-        new: req.body  
+        new: req.body
       })
     }
-
-    res.status(403).json('You can not change another users charcter!')
+    
+    res.status(403).json('You can not change another users character!')
     
   } catch (err) {
     res.status(500).send(err)
@@ -88,9 +72,9 @@ router.delete('/characters/:id', requireSignIn, async (req, res) => {
       res.status(404).json('No character found')
     } 
 
-    if (character.user == req.session.username._id){
-      await character.remove()
-      res.status(200).send('Your character was removed')
+    if (character.user == req.session.user._id){
+      await character.remove() 
+      res.status(200).json('Your character was removed')
     }
 
     res.status(403).json('You can not delete another users charcter!')
