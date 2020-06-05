@@ -1,3 +1,8 @@
+//Toggle form, login and create
+$('.message a').click(function () {
+    $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+})
+
 // Register user
 const form = document.getElementById('register-form')
 form.addEventListener('submit', registerUser)
@@ -58,7 +63,7 @@ function loginUser(event) {
                
             } else { 
                 let createContainer = document.getElementById("user-login")
-                let message = document.createElement("h4")
+                let message = document.createElement("h2")
                 message.innerText = user.user + " is logged in"
                 createContainer.appendChild(message)
                 return response.json()

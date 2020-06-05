@@ -34,7 +34,6 @@
     border-style: solid;
     width: 50%;
     height: 100%;
-    display: block;
     margin-left: auto;
     margin-right: auto;
     background: #5d26c1;
@@ -49,66 +48,48 @@
     border-radius: 0.2rem;
   }
   
-  .login {
-      width: 350px;
-      padding: 10% 0 0 0;
-      margin: auto;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-  }
-  
   .form {
-      position: relative;
-      z-index: 1;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+    margin: 0 auto;
+    padding: 20px;
+    height: 14rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .form input {
-  outline: 1;
-  background: white;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  
+    background: white;
+    width: 90%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
   }
   
   .form button {
-      outline: 0;
-      background: #59c173;
-      width: 50%;
-      height: 50px;
-      border-radius: 25%;
-      margin-bottom: 40px;
-      border: 0;
+    background: #59c173;
+    width: 50%;
+    height: 50px;
+    border-radius: 25%;
+    margin-bottom: 0.2rem;
+    border: 0;
   }
   
   .form button:hover, .form button:active {
-      background: lightblue;
+    background: lightblue;
   }
   
   .form .message {
-      margin: 15px 0 0;
+    margin: 15px 0 0;
   }
   
   .form .message a {
-      color: lightblue;
-      text-decoration: none;
-      font-size: small;
+    color: lightblue;
+    text-decoration: none;
+    font-size: small;
   }
   
   .form .register-form {
-    
+    display: none;
   }
   
   .img-disneybanner {
@@ -123,12 +104,10 @@
     font-size: 15px;
     color: darkblue;
     line-height: 30px;
-    position: relative;
     top: 20px;
   }
   
   .text-info h2 {
-    position: relative;
     top: 30px;
     text-align: center;
     padding: 30px 20px 20px;
@@ -140,7 +119,7 @@
   @media only screen and (min-width: 768px) {
     /* tablet */
     .wrapper-content-bigger {
-      height: 800px;
+     
     }
     .wrapper-content-smaller form {
       width: 30%;
@@ -151,7 +130,7 @@
   @media only screen and (min-width: 800px) {
     /* dekstop */
     .wrapper-content-bigger {
-      height: 800px;
+     
     }
     .wrapper-content-smaller form {
       width: 30%;
