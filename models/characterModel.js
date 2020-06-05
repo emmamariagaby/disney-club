@@ -9,10 +9,10 @@ let CharacterSchema = new mongoose.Schema({
         type: String,
         required: true
       },
-    bestFriend:{
+    username: {
         type: String,
         required: true
-      },
+    },
     user: {
         type: mongoose.Types.ObjectId,
         ref: 'user'

@@ -6,9 +6,10 @@ POST http://localhost:3000/characters/
 Content-Type: application/json
 
 {
-    "name": "hay-hay",
-    "movie": "Moana",
-    "bestFriend": "Moana"
+    "name": "Ella",
+    "movie": "Storm",
+    "bestFriend": "Ellen",
+    "username": "Elias"
 }
 
 ###

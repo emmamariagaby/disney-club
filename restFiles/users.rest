@@ -20,7 +20,7 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "user": "ElEllenias",
+    "user": "Elias",
     "password": "123456"
 }
 
