@@ -118,9 +118,7 @@
   
   @media only screen and (min-width: 768px) {
     /* tablet */
-    .wrapper-content-bigger {
-     
-    }
+
     .wrapper-content-smaller form {
       width: 30%;
     
@@ -129,9 +127,7 @@
   
   @media only screen and (min-width: 800px) {
     /* dekstop */
-    .wrapper-content-bigger {
-     
-    }
+    
     .wrapper-content-smaller form {
       width: 30%;
     

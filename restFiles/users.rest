@@ -1,16 +1,8 @@
-GET http://localhost:3000/users
-
-###
-
-GET http://localhost:3000/users/auth
-
-###
-
 POST http://localhost:3000/users/register
 Content-Type: application/json
 
 {
-    "user": "Ellen",
+    "user": "Louise",
     "password": "123456"
 }
 

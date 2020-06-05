@@ -19,7 +19,7 @@ router.post('/register', async (req, res) => {
     
         if (!findUser) {
             await user.save()
-            res.send(user)
+            res.status(200).send({ status: user.user + ' Registered'})
         } else {
             res.status(400).json('user already exists')
         }
@@ -60,19 +60,6 @@ router.get('/auth', async (req, res) => {
        } else {
         res.status(400).send()
        }
-
-    } catch (err) {
-        res.status(500).send(err)
-    }
-})
-
-
-// Get all users
-router.get('/', async (req, res) => {
-
-    try {
-        const users = await userModel.find()
-        res.send(users)
 
     } catch (err) {
         res.status(500).send(err)
