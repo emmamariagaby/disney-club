@@ -9,6 +9,10 @@ let CharacterSchema = new mongoose.Schema({
         type: String,
         required: true
       },
+    bestFriend:{
+        type: String,
+        required: true
+      },
     username: {
         type: String,
         required: true
