@@ -28,14 +28,6 @@ app.use(cookieSession({
     secure: false,
 }))
 
-app.get('/index2.html', (req, res, next) => {
-    if (req.session.user) {
-      next() 
-    } else {
-        res.status(300).redirect('/index1.html')
-    }
-})
-
 app.use(characters)
 app.use('/users', users)
 
