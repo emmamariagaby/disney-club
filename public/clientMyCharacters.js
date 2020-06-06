@@ -18,19 +18,27 @@ function createNew(event) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(character)
-    })
+    }).then((response) => {
+
+        if(response.status === 400) {
+            console.log("Character already exists")
+            let createContainer = document.getElementById("message")
+            let message = document.createElement("h4")
+            message.innerText = "Character already exists"
+            createContainer.appendChild(message)
+        } else {
 
     let createContainer = document.getElementById("message")
 
     let message = document.createElement("h4")
-    message.innerText = "En ny Disneyfigur har lagts till"
+    message.innerText = "A new Disney character has been added!"
     createContainer.appendChild(message)
-
+    }
     setTimeout(function () {
         window.location.reload()
     }, 1500)
+})
 }
-
 
 const formUpdate = document.getElementById('updateCharacter')
 formUpdate.addEventListener('submit', update)
@@ -53,18 +61,33 @@ function update(event) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(updatedCharacter)
+    }).then((response) => {
+
+        if(response.status === 404) {
+           console.log('No character found')
+           let createContainer = document.getElementById("updateMessage")
+           let updateMessage = document.createElement("h4")
+           updateMessage.innerText = "No character found"
+           createContainer.appendChild(updateMessage)
+       }
+        if (response.status === 200) {
+            let createContainer = document.getElementById("updateMessage")
+            let updateMessage = document.createElement("h4")
+            updateMessage.innerText = name + " has been updated"
+            createContainer.appendChild(updateMessage)
+        }
+        if (response.status === 403) {
+            console.log('You can not change another users character!')
+            let createContainer = document.getElementById("updateMessage")
+            let updateMessage = document.createElement("h4")
+            updateMessage.innerText = "You can not change another users character!"
+            createContainer.appendChild(updateMessage)
+        }
+
+        setTimeout(function () {
+            window.location.reload()
+        }, 1500)
     })
-
-    let createContainer = document.getElementById("updateMessage")
-
-    let updateMessage = document.createElement("h4")
-    updateMessage.innerText = name + " har uppdaterats"
-    createContainer.appendChild(updateMessage)
-
-    setTimeout(function () {
-        window.location.reload()
-    }, 1500)
-
 }
 
 const deleteform = document.getElementById('deleteCharacter')
@@ -86,18 +109,34 @@ function deleteCharacter(event) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify()
+    }).then((response) => {
+
+        if(response.status === 404) {
+           console.log('No character found')
+           let createContainer = document.getElementById("updateMessage")
+           let updateMessage = document.createElement("h4")
+           updateMessage.innerText = "No character found"
+           createContainer.appendChild(updateMessage)
+       }
+        if (response.status === 200) {
+            let deletecontainer = document.getElementById("deleteMessage")
+            let deleteMessage = document.createElement("h4")
+            deleteMessage.innerText = id + " has been deleted"
+            deletecontainer.appendChild(deleteMessage)
+        }
+        if (response.status === 403) {
+            console.log('You can not delete another users charcter!')
+            let createContainer = document.getElementById("updateMessage")
+            let updateMessage = document.createElement("h4")
+            updateMessage.innerText = "You can not delete another users charcter!"
+            createContainer.appendChild(updateMessage)
+        }
     })
-
-    let deletecontainer = document.getElementById("deleteMessage")
-
-    let deleteMessage = document.createElement("h4")
-    deleteMessage.innerText = id + " har raderats"
-    deletecontainer.appendChild(deleteMessage)
-
     setTimeout(function () {
         window.location.reload()
     }, 1500)
 }
+
 
 fetch("/characters").then((response) => {
     return response.json()
@@ -119,7 +158,9 @@ function allCharacters(characters) {
         characterBestFriend.innerText = "Best Friend: " + character.bestFriend
         let characterId = document.createElement("p")
         characterId.innerText = "Disney Id : " + character._id
-
+        let userName = document.createElement("p")
+        userName.innerText = "Created By : " + character.username
+        
         let characterDiv = document.createElement("div")
         characterDiv.classList.add("all")
 
@@ -128,6 +169,7 @@ function allCharacters(characters) {
         characterDiv.appendChild(characterMovie)
         characterDiv.appendChild(characterBestFriend)
         characterDiv.appendChild(characterId)
+        characterDiv.appendChild(userName)
 
         allCharactersContainer.appendChild(characterDiv)
     })

@@ -37,7 +37,7 @@ a {
   color: white;
   text-align: center;
   text-decoration: none;
-  margin: 1rem;
+  margin: 2rem;
   padding: 0.5rem;
   border-radius: 0.2rem;
 }
@@ -73,31 +73,25 @@ a.active1, a.active2, a.active3, a.active4 {
   border-style: solid;
   width: 50%;
   height: 100%;
-  display: block;
   margin-left: auto;
   margin-right: auto;
   background: #5d26c1;
 }
 
 form {
-  position: relative;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 form input {
-  outline: 1;
   background: white;
-  width: 100%;
+  width: 90%;
   border: 0;
   margin: 0 0 15px;
   padding: 15px;
-  box-sizing: border-box;
-  display: block;
   margin-left: auto;
   margin-right: auto;
 }
@@ -108,12 +102,12 @@ form button {
   width: 50%;
   height: 50px;
   border-radius: 25%;
-  margin-bottom: 40px;
+  margin-bottom: 0;
   border: 0;
 }
 
 form button:hover, form button:active {
-    background: lightblue;
+  background: lightblue;
 }
 
 .img-disneybanner {
@@ -123,19 +117,23 @@ form button:hover, form button:active {
 }
 
 article p {
-  margin: 3rem;
+  text-align: center;
+}
+
+.headline {
+  margin: 7rem 0 0 0;
 }
 
 .allCharacters {
   display: flex;
   flex-direction: column;
   color: darkblue;
+  margin: 2rem;
 }
 
 h2, h3, h4 {
-   text-align: center; 
-   color: darkblue;
-   margin: 2rem
+  text-align: center; 
+  color: darkblue;
 }
 
 #getAllCharacters {
@@ -153,7 +151,9 @@ h2, h3, h4 {
   background-image: linear-gradient(#59c173, #a17fe0, #5d26c1);
   background-color: #59c173;
   padding: 1rem;
+  width: 15rem;
   border-radius: 0.2rem;
+  color: lightblue
 }
 
 #create, #updateCharacter, #deleteCharacter {
@@ -202,6 +202,10 @@ h2, h3, h4 {
   .wrapper-content-smaller form {
     width: 30%;
   }
+
+  .all {
+    width: 20rem;
+  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -218,13 +222,16 @@ h2, h3, h4 {
   }
 
   #getAllCharacters {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    
+    justify-content: space-around;
   }
 
   .wrapper-content-smaller form {
     width: 30%;
   
+  }
+
+  .all {
+    width: 20rem;
   }
 }
