@@ -3,7 +3,7 @@
 
 We are going to create a user based platform where a user shall be able to register, log in create, read, update and delete posts and also be able to log out from the platform. You can read all posts but you should not be able to update or delete someone elses post. 
 
-You can only create or read the users :) 
+You can only create or read the users.
 
 You can read all posts even if you are not logged in.
 
@@ -24,12 +24,12 @@ npm install mongodb mongoose
 npm install bcrypt or bcryptjs - you might need to install Pyhton if you get errors (windows)
 npm install cookie-session
 
-run npm run dev or nodemon server.js to start the application, then visit localhost:3000.
+run npm, run dev or nodemon server.js to start the application, then visit localhost:3000.
 
 requirement G: 
 Git & Github - yes
 ReadME file - yes
-In time - I guess yes
+In time - yes
 Two resources with CRUD - yes
 Content is saved to MONGODB - yes.
 
